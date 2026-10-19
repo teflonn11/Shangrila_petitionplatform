@@ -1,0 +1,97 @@
+/* Custom styles to complement Tailwind CSS */
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Toast animation */
+.toast-enter {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Form focus states */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom button styles */
+.btn-primary {
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+}
+
+/* Petition card styles */
+.petition-card {
+    transition: transform 0.2s ease;
+}
+
+.petition-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Loading spinner */
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3B82F6;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* QR Scanner overlay */
+.qr-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.qr-scanner {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
